@@ -31,9 +31,48 @@
           </div>
         </nav>
       </div>
-
       <div class="container data-mahasiswa mt-5">
-          <table class="table table-striped">
+      <!--Button trigger modal-->
+      <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#tambahData">
+      Tambah Data
+      </button>
+      <!--Modal-->
+      <div class="modal fade" id="tambahData" tabindex="-1" aria-labelledby="tambahDataLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <form method="POST" action="store.php" name="form">
+              <div class="modal-header">
+                <h5 class="modal-title" id="tambahDataLabel">Tambah Data</h5>
+                <button type="button" class="btn-close" data-bs-dissmiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                  <!--Input nama-->
+                  <div class="mb-3">
+                      <label for="nama" class="form-label">Nama</label>
+                      <input type="text" class="form-control" id="nama" placeholder="Masukkan Nama Mahasiswa" name="nama" required>
+                  </div>
+                  <!--Input nim-->
+                  <div class="mb-3">
+                      <label for="NIM" class="form-label">NIM</label>
+                      <input type="text" class="form-control" id="NIM" placeholder="Masukkan NIM Mahasiswa" name="nim" required>
+                  </div>
+                  <!--Input alamat-->
+                  <div class="mb-3">
+                      <label for="Alamat" class="form-label">Alamat</label>
+                      <!--Kita akan coba menggunakan textarea sebagai input alamat-->
+                      <textarea type="text" class="form-control" id="Alamat" placeholder="Masukkan Alamat Mahasiswa" name="alamat" required></textarea>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="submit" class="btn btn-primary" value="SIMPAN">Save Changes</button>
+                </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="container data-mahasiswa mt-5">
+          <table class="table table-striped" id="tabelMahasiswa">
             <thead>
               <tr>
                 <th scope="col">No.</th>
@@ -48,7 +87,7 @@
             <?php
               include 'config.php';
               $no = 1;
-              $mahasiswa = mysqli_query($koneksi, "select *from mahasiswa");
+              $mahasiswa = mysqli_query($koneksi, "select * from mahasiswa");
 
               while($data = mysqli_fetch_array($mahasiswa)){
               ?>
@@ -62,15 +101,21 @@
                     <a href="delete.php?id=<?php echo $data['id']; ?>" class="btn btn-danger btn-sm" onclick="return confirm ('Anda Yakin Akan Menghapus Data Mahasiswa Ini ?')">HAPUS</a>
                   </td>
                 </tr>
-              <?php
-              }
-              ?>
+            <?php
+            }
+            ?>
           </tbody>
           </table>
         </div>
       </div>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+      <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+      <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+      <script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap5.min.js"></script>
+      <script>
+          $(document).ready(function() {
+            $('#data-mhs').DataTable();
+          })
+      </script>
   </body>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" 
-          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" 
-          crossorigin="anonymous"></script>
 </html>

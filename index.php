@@ -26,7 +26,7 @@
   </div>
   </nav>
 
-  <div class="container data-mashasiswa mt-5">
+  <div class="container data-mahasiswa mt-5">
     <!-- Button trigger modal -->
   <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tambahData">
     Tambah Data
@@ -43,16 +43,16 @@
           </div>
           <div class="modal-body">
             <div class="mb-3">
-              <label for="nama" class="form-label">Nama</label>
-              <input type="text" class="form-control" id="nama" placeholder="Masukkan Nama Mahasiswa" name="nama">
+              <label for="Nama" class="form-label">Nama</label>
+              <input type="text" class="form-control" id="Nama" placeholder="Masukkan Nama Mahasiswa" name="Nama">
             </div>
             <div class="mb-3">
-              <label for="nim" class="form-label">Nim</label>
-              <input type="text" class="form-control" id="nim" placeholder="Masukkan Nim Mahasiswa" name="nim">
+              <label for="NIM" class="form-label">Nim</label>
+              <input type="text" class="form-control" id="NIM" placeholder="Masukkan Nim Mahasiswa" name="NIM">
             </div>
             <div class="mb-3">
-              <label for="alamat" class="form-label">Alamat</label>
-              <textarea class="form-control" id="alamat" rows="3" name="alamat"></textarea>
+              <label for="Alamat" class="form-label">Alamat</label>
+              <textarea class="form-control" id="Alamat" rows="3" name="Alamat"></textarea>
             </div>
           </div>
           <div class="modal-footer">
@@ -89,9 +89,9 @@
                         <td><?php echo $data['NIM']; ?></td>
                         <td><?php echo $data['Alamat']; ?></td>
                         <td>
-                          <a href="detail.php?id=<?php echo $data['id']; ?>" class="btn btn-success btn-sm text-white">DETAIL</a>
-                          <a href="edit.php?id=<?php echo $data['id']; ?>" class="btn btn-warning btn-sm text-white">EDIT</a>
-                          <a href="delete.php?id=<?php echo $data['id']; ?>" class="btn btn-danger btn-sm" onclick="return confirm ('Anda Yakin Akan Menghapus Data Mahasiswa Ini ?')">HAPUS</a>
+                          <a href="detail.php?id=<?php echo $data['ID']; ?>" class="btn btn-success btn-sm text-white">DETAIL</a>
+                          <a href="edit.php?id=<?php echo $data['ID']; ?>" class="btn btn-warning btn-sm text-white">EDIT</a>
+                          <a href="delete.php?id=<?php echo $data['ID']; ?>" class="btn btn-danger btn-sm" onclick="return confirm ('Anda Yakin Akan Menghapus Data Mahasiswa Ini ?')">HAPUS</a>
                         </td>
                       </tr>
                       <?php

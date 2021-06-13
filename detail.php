@@ -28,12 +28,12 @@
 
     <?php
     include 'config.php';
-    $id = $_GET['id'];
-    $mahasiswa = mysqli_query($koneksi, "select * from mahasiswa where id='$id'");
+    $ID = $_GET['id'];
+    $mahasiswa = mysqli_query($koneksi, "select * from mahasiswa where id = '$ID'");
     while ($data = mysqli_fetch_assoc($mahasiswa)){
     ?>
         <div class="container mt-5">
-            <p><a href="index.php">Home</a> / Detail Mahasiswa / <?php echo $data['nama'] ?></p>
+            <p><a href="index.php">Home</a> / Detail Mahasiswa / <?php echo $data['Nama'] ?></p>
             <div class="card">
                 <div class="card-header">
                     <p class="fw-bold">Profil Mahasiswa</p>

@@ -27,8 +27,8 @@
 
   <?php
   include 'config.php';
-  $id = $_GET['id'];
-  $mahasiswa = mysqli_query($koneksi, "select * from mahasiswa where id='$id'");
+  $ID = $_GET['id'];
+  $mahasiswa = mysqli_query($koneksi, "select * from mahasiswa where ID ='$ID'");
 
   while($data = mysqli_fetch_assoc($mahasiswa)){
   ?>
@@ -41,7 +41,7 @@
             <div class="card-body fw-bold">
                 <form  method="post" action="update.php"> 
                     <div class="mb-3">
-                        <input type="hidden" class="form-control" name="id" value="<?php echo $data['id']; ?>">
+                        <input type="hidden" class="form-control" name="ID" value="<?php echo $data['ID']; ?>">
                     </div>
                     <div class="mb-3">
                         <label for="Nama" class="form-label">Nama</label>

@@ -89,7 +89,7 @@
                         <td><?php echo $data['NIM']; ?></td>
                         <td><?php echo $data['Alamat']; ?></td>
                         <td>
-                          <a href="detail.php?id=<?php echo $data['ID']; ?>" class="btn btn-success btn-sm text-white">DETAIL</a>
+                          <a href="print.php?id=<?php echo $data['ID']; ?>" class="btn btn-success btn-sm text-white">DETAIL</a>
                           <a href="edit.php?id=<?php echo $data['ID']; ?>" class="btn btn-warning btn-sm text-white">EDIT</a>
                           <a href="delete.php?id=<?php echo $data['ID']; ?>" class="btn btn-danger btn-sm" onclick="return confirm ('Anda Yakin Akan Menghapus Data Mahasiswa Ini ?')">HAPUS</a>
                         </td>

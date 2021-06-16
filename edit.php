@@ -27,7 +27,7 @@
 
   <?php
   include 'config.php';
-  $ID = $_GET['id'];
+  $ID = $_GET['ID'];
   $mahasiswa = mysqli_query($koneksi, "select * from mahasiswa where ID ='$ID'");
 
   while($data = mysqli_fetch_assoc($mahasiswa)){

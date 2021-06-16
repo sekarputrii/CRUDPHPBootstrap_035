@@ -42,7 +42,7 @@
                     <p>Nama : <?php echo $data['Nama'] ?></p>
                     <p>NIM : <?php echo $data['NIM'] ?></p>
                     <p>Alamat : <?php echo $data['Alamat'] ?></p>
-                    <button class="btn btn-primary">Cetak</button>
+                    <a href="print.php?id" class="btn btn-primary btn-sm text-white">CETAK</a>
                 </div>
             </div>
         </div>
